@@ -21,9 +21,14 @@ $(document).ready(function() {
     	$(this).closest('li').fadeOut(250); //could also use remove()
 	})
 
-	// Checks off a completed list item
+	// Toggles completed/non-completed item from the list
 	$(".item-list").on("click", ".done", function(){
-    	$(this).closest('li').addClass("strikethrough");
-	})
+    	if($(this).closest("li").hasClass("strikethrough")) {
+    		$(this).closest('li').removeClass("strikethrough");
+    	}
+    	else {
+    		$(this).closest('li').addClass("strikethrough");
+    	}
+	});	
 
 });
